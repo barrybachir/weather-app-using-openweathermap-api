@@ -78,6 +78,7 @@ cityInput.addEventListener("keyup", function (event) {
           var weatherType = data.weather[0].description;
           var realFeel = data.main.feels_like;
           var windSpeed = data.wind.speed;
+          var icon = data.weather[0].icon;
           var windDirection = data.wind.deg;
           var visibility = data.visibility / 1000;
           var pressure = data.main.pressure;
@@ -118,16 +119,15 @@ cityInput.addEventListener("keyup", function (event) {
 
               Object.values(dailyForecasts).forEach(day => {
                 const forecastCard = document.createElement('div');
-                forecastCard.classList.add('daily-forecast-card');
+                
 
                 forecastCard.innerHTML = `
-        <p class="daily-forecast-date">${day.date}</p>
-        <div class="daily-forecast-logo"><img class="imgs-as-icons" src="${day.icon}"></div>
-        <div class="max-min-temperature-daily-forecast">
-          <span class="max-daily-forecast">${Math.round(day.maxTemp - 273.15)}<sup>o</sup>C</span>
-          <span class="min-daily-forecast">${Math.round(day.minTemp - 273.15)}<sup>o</sup>C</span>
-        </div>
-        <p class="weather-type-daily-forecast">${day.weatherType}</p>
+                <div class="text-center bg-blue-100 p-4 rounded-lg shadow-sm">
+                    <p class="font-semibold text-gray-700">${day.date} </p>
+                    <img src="${day.icon}" alt="Globalement ensoleillé" class="w-12 h-12 mx-auto">
+                    <p class="text-blue-700 font-bold">${Math.round(day.maxTemp - 273.15)}°C / ${Math.round(day.minTemp - 273.15)}°C</p>
+                    <p class="text-red-500 font-semibold">${day.weatherType}</p>
+                </div>
       `;
 
                 forecastContainer.appendChild(forecastCard);
@@ -138,10 +138,15 @@ cityInput.addEventListener("keyup", function (event) {
             });
 
 
-
           document.getElementById("locationName").innerHTML = location;
           document.getElementById("temperatureValue").innerHTML = temperature + "<sup>o</sup>C";
           document.getElementById("weatherType").innerHTML = weatherType;
+          document.getElementById("lever").innerHTML = sunrise;
+          document.getElementById("coucher").innerHTML = sunset ;
+          document.getElementById("direction").innerHTML = windDirection;
+          document.getElementById("minimale").innerHTML = maxTemperature;
+          document.getElementById("maximale").innerHTML = minTemperature;
+          document.getElementById("icon").src = `https://openweathermap.org/img/w/${icon}.png`;
           document.getElementById("realFeelAdditionalValue").innerHTML = realFeel + "<sup>o</sup>C";
           document.getElementById("windSpeedAdditionalValue").innerHTML = windSpeed + " km/h";
           document.getElementById("windDirectionAdditionalValue").innerHTML = windDirection;

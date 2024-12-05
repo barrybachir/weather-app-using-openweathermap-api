@@ -125,12 +125,12 @@ cityInputMobile.addEventListener("keyup", function (event) {
           document.getElementById("sunsetAdditionalValue").innerHTML = sunset;
         }
         else {
+          
           document.getElementById("locationName").innerHTML = "City Not Found";
           document.getElementById("temperatureValue").innerHTML = "";
           document.getElementById("weatherType").innerHTML = "";
         }
       }
-
       getWeather();
     }
     else document.getElementById("locationName").innerHTML = "Enter a city name...";
