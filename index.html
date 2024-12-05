@@ -62,16 +62,19 @@
   </style>
 </head>
 
-<body class="bg-gradient-to-r from-blue-100 via-blue-200 to-blue-300 min-h-screen">
+<body class="bg-gradient-to-r from-green-100 via-green-200 to-green-300 min-h-screen">
   <ul class="navbar">
-    <li style="float: left; margin-left: -10px;" class="forecast"><a class="repo-link"
-        href="https://github.com/kshitizrohilla/weather-app-using-openweathermap-api/">Ecoverse</a></li>
+    <li style="float: left; margin-left: -10px;" class="forecast">
+        <img src="icons/399216077_122145087110010724_7042044731465924354_n.jpg" alt="Logo Ecoverse" class="w-12 h-12 inline-block mb-2 ml-5">
+        <a class="repo-link" href="https://github.com/kshitizrohilla/weather-app-using-openweathermap-api/">ECOVERSE</a>
+    </li>
     <li><a href="#">⟳</a></li>
     <li><a href="#">☆<!--★--></a></li>
     <li><a href="#">···</a></li>
     <li><input spellcheck="false" class="search-city" id="searchCity" type="text" autocomplete="off"
-        placeholder="🔍︎ Search City"></li>
-  </ul>
+        placeholder="🔍︎ taper une ville"></li>
+</ul>
+
 
   <ul class="mobile-navbar">
     <li><input spellcheck="false" class="mobile-search-city" id="mobileSearchCity" type="text" autocomplete="off"
@@ -84,74 +87,78 @@
             <div class="flex justify-between items-center">
             
                 <div>
-                    <h1 class="text-2xl font-bold text-blue-700"></h1>
+                    <h1 class="text-2xl font-bold text-green-700"></h1>
                     <p class="text-gray-500" id="locationName">Météo actuelle</p>
                     <img src="" alt="Partiellement ensoleillé" class="w-24 h-24" id="icon">
-                    <p class="text-5xl font-bold text-blue-800" id="temperatureValue">-</p>
+                    <p class="text-5xl font-bold text-green-800" id="temperatureValue">-</p>
                     <p class="text-gray-600 italic" id="weatherType">Partiellement ensoleillé</p>
                     <p class="text-gray-600">Ressenti: <span class="font-bold text-red-500" id="realFeelAdditionalValue">-</span></p>
                 </div>
 
                   <!-- Section des 4 cases côte à côte -->
 <div class="grid grid-cols-2 gap-4 mt-6 w-1/2">
-  <div class="bg-blue-100 p-3 rounded-lg shadow text-center">
+  <div class="bg-green-100 p-3 rounded-lg shadow text-center">
       <div class="flex items-center justify-center space-x-2">
-          <img src="sunrise_icon.png" alt="Lever du soleil" class="w-6 h-6">
-          <p class="text-gray-500 text-sm">Lever du soleil</p>
+          <img src="icons/icons8-vent-50.png" alt="Lever du soleil" class="w-6 h-6">
+          <p class="text-gray-500 text-sm">Vent</p>
       </div>
-      <p class="font-bold text-blue-800 text-lg mt-2" id="lever">-</p>
+      <p class="font-bold text-green-800 text-lg mt-2" id="windSpeedAdditionalValue">-</p>
   </div>
-  <div class="bg-blue-100 p-3 rounded-lg shadow text-center">
+  <div class="bg-green-100 p-3 rounded-lg shadow text-center">
       <div class="flex items-center justify-center space-x-2">
-          <img src="sunset_icon.png" alt="Coucher du soleil" class="w-6 h-6">
-          <p class="text-gray-500 text-sm">Crépuscule</p>
+          <img src="icons/humidite.png" alt="Coucher du soleil" class="w-6 h-6">
+          <p class="text-gray-500 text-sm">Humidité</p>
       </div>
-      <p class="font-bold text-blue-800 text-lg mt-2" id="coucher">-</p>
+      <p class="font-bold text-green-800 text-lg mt-2"  id="humidityAdditionalValue">-</p>
   </div>
-  <div class="bg-blue-100 p-3 rounded-lg shadow text-center">
+  <div class="bg-green-100 p-3 rounded-lg shadow text-center">
       <div class="flex items-center justify-center space-x-2">
-          <img src="temp_high_icon.png" alt="Température maximale" class="w-6 h-6">
-          <p class="text-gray-500 text-sm">Température maximale</p>
+          <img src="icons/visibilite.png" alt="Température maximale" class="w-6 h-6">
+          <p class="text-gray-500 text-sm">Visibilité</p>
       </div>
-      <p class="font-bold text-blue-800 text-lg mt-2" id="maximale">-</p>
+      <p class="font-bold text-green-800 text-lg mt-2" id="visibilityAdditionalValue">-</p>
   </div>
-  <div class="bg-blue-100 p-3 rounded-lg shadow text-center">
+  <div class="bg-green-100 p-3 rounded-lg shadow text-center">
       <div class="flex items-center justify-center space-x-2">
-          <img src="temp_low_icon.png" alt="Température minimale" class="w-6 h-6">
-          <p class="text-gray-500 text-sm">Température minimale</p>
+          <img src="icons/pression.png" alt="Température minimale" class="w-6 h-6">
+          <p class="text-gray-500 text-sm">Pression</p>
       </div>
-      <p class="font-bold text-blue-800 text-lg mt-2" id="minimale">-</p>
+      <p class="font-bold text-green-800 text-lg mt-2" id="pressureAdditionalValue">-</p>
   </div>
 </div>
 
                 
             </div>
             <div class="mt-4">
-                <p class="text-gray-700">Le ciel sera principalement ensoleillé. Le temps sera humide, avec une température maximale de 32°C.</p>
-                <div class="grid grid-cols-5 gap-4 mt-6 text-center">
-                    <div>
-                        <p class="text-gray-500">Vent</p>
-                        <p class="font-semibold text-blue-800" id="windSpeedAdditionalValue">-</p>
-                    </div>
-                    <div>
-                        <p class="text-gray-500">Humidité</p>
-                        <span class="humidity-additional-value" class="font-semibold text-blue-800" id="humidityAdditionalValue">-</span>
-                    </div>
-                    <div>
-                        <p class="text-gray-500">Visibilité</p>
-                        <p class="font-semibold text-blue-800" id="visibilityAdditionalValue">-</p>
-                    </div>
-                    <div>
-                        <p class="text-gray-500">Pression</p>
-                        <p class="font-semibold text-blue-800" id="pressureAdditionalValue">-</p>
-                    </div>
-                    <div>
-                      <p class="text-gray-500">Direction du vent</p>
-                      <p class="font-semibold text-blue-800" id="direction">-</p>
-                  </div>
-
-                    
+                
+              <div class="grid grid-cols-5 gap-4 mt-6 text-center">
+                <div>
+                    <img src="icons/lever-du-soleil.png" alt="Lever du soleil" class="w-8 h-8 mx-auto">
+                    <p class="text-gray-500">Lever du soleil</p>
+                    <p class="font-semibold text-green-800" id="lever">-</p>
                 </div>
+                <div>
+                    <img src="icons/coucher-de-soleil.png" alt="Crépuscule" class="w-8 h-8 mx-auto">
+                    <p class="text-gray-500">Crépuscule</p>
+                    <p class="font-semibold text-green-800" id="coucher">-</p>
+                </div>
+                <div>
+                    <img src="icons/high-temperature.png" alt="Température maximale" class="w-8 h-8 mx-auto">
+                    <p class="text-gray-500">Température maximale</p>
+                    <p class="font-semibold text-green-800" id="maximale">-</p>
+                </div>
+                <div>
+                    <img src="icons/low-temperature.png" alt="Température minimale" class="w-8 h-8 mx-auto">
+                    <p class="text-gray-500">Température minimale</p>
+                    <p class="font-semibold text-green-800" id="minimale">-</p>
+                </div>
+                <div>
+                    <img src="icons/direction-du-vent.png" alt="Direction du vent" class="w-8 h-8 mx-auto">
+                    <p class="text-gray-500">Direction du vent</p>
+                    <p class="font-semibold text-green-800" id="direction">-</p>
+                </div>
+            </div>
+            
             </div>
         </div>
         <div class="daily-forecast">
@@ -219,7 +226,7 @@
               </div> -->
           </div>
         <div class="bg-white p-6 rounded-lg shadow-lg mt-8">
-          <h2 class="text-xl font-bold text-blue-700">Prévisions de la semaine</h2>
+          <h2 class="text-xl font-bold text-green-700">Prévisions de la semaine</h2>
           
           <div id="forecast-container" class="grid grid-cols-6 gap-4 mt-6" class="forecast-container">
 
@@ -268,6 +275,9 @@
         </div>
         <script src="scripts/script.js"></script>
         <script src="scripts/mobile.js"></script>
+        <footer>
+          © 2024 Ecoverse, | Tous droits réservés 
+        </footer>
 </body>
 
 </html>
